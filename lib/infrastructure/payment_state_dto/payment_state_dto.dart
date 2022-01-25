@@ -1,11 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:kevin_demo_app/domain/payment_state/payment_state.dart';
 
 part 'payment_state_dto.freezed.dart';
 part 'payment_state_dto.g.dart';
-
-//------------------------------------------------------------------------------
 
 @freezed
 class PaymentStateDTO with _$PaymentStateDTO {

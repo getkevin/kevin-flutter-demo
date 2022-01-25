@@ -1,22 +1,14 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:kevin_demo_app/domain/i_kevin_repository.dart';
 import 'package:kevin_demo_app/domain/repository_failure/repository_failure.dart';
 import 'package:kevin_demo_app/injectable.dart';
 import 'package:kevin_demo_app/presentation/widgets/kevin_demo_button.dart';
 
-//------------------------------------------------------------------------------
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
-
-  //----------------------------------------------------------------------------
-  // Actions
-  //----------------------------------------------------------------------------
 
   void _onLinkAccount(BuildContext context) async {
     final result = await getIt<IKevinRepository>().startAccountLinking();
@@ -116,10 +108,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
-  //----------------------------------------------------------------------------
-  // Build
-  //----------------------------------------------------------------------------
 
   @override
   Widget build(BuildContext context) {

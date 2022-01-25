@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-
 import 'package:kevin_demo_app/domain/auth_state/auth_state.dart';
 import 'package:kevin_demo_app/domain/payment_state/payment_state.dart';
 import 'package:kevin_demo_app/domain/i_api_repository.dart';
@@ -9,13 +8,11 @@ import 'package:kevin_demo_app/domain/repository_failure/repository_failure.dart
 import 'package:kevin_demo_app/infrastructure/auth_state_dto/auth_state_dto.dart';
 import 'package:kevin_demo_app/infrastructure/payment_state_dto/payment_state_dto.dart';
 
-//------------------------------------------------------------------------------
-
 @LazySingleton(as: IApiRepository)
 class ApiRepository implements IApiRepository {
   final Dio _dio;
 
-  final String baseUrl = "https://your.kevin.url/";
+  final String baseUrl = "https://www.bio-matic.com/kevin/v2/";
 
   ApiRepository(
     this._dio,

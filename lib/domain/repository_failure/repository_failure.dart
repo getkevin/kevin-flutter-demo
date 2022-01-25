@@ -2,8 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'repository_failure.freezed.dart';
 
-//------------------------------------------------------------------------------
-
 @freezed
 class RepositoryFailure with _$RepositoryFailure {
   const RepositoryFailure._();

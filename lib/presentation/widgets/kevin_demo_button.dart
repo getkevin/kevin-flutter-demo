@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
-//------------------------------------------------------------------------------
-
 typedef Callback = void Function();
-
-//------------------------------------------------------------------------------
 
 class KevinDemoButton extends StatelessWidget {
   final double height;

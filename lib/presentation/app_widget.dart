@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 
 import 'package:kevin_demo_app/presentation/home_screen.dart';
 
-//------------------------------------------------------------------------------
-
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
 

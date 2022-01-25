@@ -1,19 +1,14 @@
 package eu.kevin.kevin_demo_app
 
 import java.util.*
-
 import androidx.annotation.NonNull
 import android.content.Intent
 import kotlin.collections.LinkedHashMap
-
-// Flutter
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.MethodCall
-
-// kevin. SDK
 import eu.kevin.accounts.KevinAccountsConfiguration
 import eu.kevin.accounts.KevinAccountsPlugin
 import eu.kevin.accounts.accountsession.AccountSessionActivity
@@ -62,8 +57,6 @@ class MainActivity: FlutterActivity() {
         }
     }
 
-    //----------------------------------------------------------------------------
-
     private fun handle(call: MethodCall, result: Result) {
 
         when (call.method) {
@@ -81,10 +74,6 @@ class MainActivity: FlutterActivity() {
             }
         }
     }
-
-    //----------------------------------------------------------------------------
-    // Kevin SDK integration
-    //----------------------------------------------------------------------------
 
     private fun openKevinAccountLinking(call: MethodCall, result: Result) {
         flutterResult = result
@@ -140,10 +129,6 @@ class MainActivity: FlutterActivity() {
             parseError(error)
         }
     }
-
-    //----------------------------------------------------------------------------
-    // Kevin SDK integration
-    //----------------------------------------------------------------------------
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         var response = LinkedHashMap<String, Any>()
@@ -215,18 +200,10 @@ class MainActivity: FlutterActivity() {
         return response
     }
 
-    //----------------------------------------------------------------------------
-    // Companion
-    //----------------------------------------------------------------------------
-
     companion object {
         const val REQUEST_CODE_LINKING = 100
         const val REQUEST_CODE_PAYMENT = 101
     }
-
-    // ------------------------------------------------------------
-    // MARK: - Internal
-    // ------------------------------------------------------------
 
     private fun parseError(error: Exception) {
         val response = LinkedHashMap<String, Any>()

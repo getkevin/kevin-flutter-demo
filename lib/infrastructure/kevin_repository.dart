@@ -1,15 +1,11 @@
 import 'package:flutter/services.dart';
-
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-
 import 'package:kevin_demo_app/domain/auth_state/auth_state.dart';
 import 'package:kevin_demo_app/domain/i_api_repository.dart';
 import 'package:kevin_demo_app/domain/i_kevin_repository.dart';
 import 'package:kevin_demo_app/domain/payment_state/payment_state.dart';
 import 'package:kevin_demo_app/domain/repository_failure/repository_failure.dart';
-
-//------------------------------------------------------------------------------
 
 @LazySingleton(as: IKevinRepository)
 class KevinRepository implements IKevinRepository {

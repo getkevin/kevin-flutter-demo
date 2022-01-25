@@ -1,11 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:kevin_demo_app/domain/auth_state/auth_state.dart';
 
 part 'auth_state_dto.freezed.dart';
 part 'auth_state_dto.g.dart';
-
-//------------------------------------------------------------------------------
 
 @freezed
 class AuthStateDTO with _$AuthStateDTO {
