@@ -12,7 +12,7 @@ import 'package:kevin_demo_app/infrastructure/payment_state_dto/payment_state_dt
 class ApiRepository implements IApiRepository {
   final Dio _dio;
 
-  final String baseUrl = "https://www.bio-matic.com/kevin/v2/";
+  final String baseUrl = "https://your.kevin.url/";
 
   ApiRepository(
     this._dio,
