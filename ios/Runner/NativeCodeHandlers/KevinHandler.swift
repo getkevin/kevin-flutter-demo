@@ -27,11 +27,11 @@ class KevinHandler: KevinAccountLinkingSessionDelegate, KevinPaymentSessionDeleg
             return
         }
         
-        if(call.method == "OpenKevinAccountLinking") {
+        if call.method == "OpenKevinAccountLinking" {
             openKevinAccountLinking(result: result, state: args["state"] as! String)
-        } else if(call.method == "OpenKevinBankPayment") {
+        } else if call.method == "OpenKevinBankPayment" {
             openKevinBankPayment(result: result, id: args["id"] as! String)
-        } else if(call.method == "OpenKevinCardPayment") {
+        } else if call.method == "OpenKevinCardPayment" {
             openKevinCardPayment(result: result, id: args["id"] as! String)
         } else {
             result(FlutterMethodNotImplemented)
