@@ -19,6 +19,8 @@ import Kevin
     }
     
     private func initializeKevinSDK() {
+        Kevin.shared.theme = DemoKevinTheme()
+        Kevin.shared.locale = Locale(identifier: "en")
         KevinAccountsPlugin.shared.configure(
             KevinAccountsConfiguration.Builder(
                 callbackUrl: URL(string: "https://redirect.kevin.eu/authorization.html")!
