@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:kevin_demo_app/presentation/core/text_styles.dart';
 
 typedef Callback = void Function();
 
 class KevinDemoButton extends StatelessWidget {
+  final bool isEnabled;
   final double height;
   final double padding;
   final String title;
@@ -10,7 +12,8 @@ class KevinDemoButton extends StatelessWidget {
 
   const KevinDemoButton({
     Key? key,
-    this.height = 50.0,
+    this.isEnabled = true,
+    this.height = 48.0,
     this.padding = 8.0,
     required this.title,
     required this.onTap,
@@ -22,14 +25,23 @@ class KevinDemoButton extends StatelessWidget {
       padding: EdgeInsets.all(padding),
       child: MaterialButton(
         height: height,
-        minWidth: MediaQuery.of(context).size.width * 0.8,
-        color: Colors.blue,
+        minWidth: double.maxFinite,
+        color: isEnabled ? const Color(0xff5d80fe) : const Color(0xff7c8894),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(height / 2),
+          borderRadius: BorderRadius.circular(8.0),
         ),
         textColor: Colors.white,
-        onPressed: onTap,
-        child: Text(title.toUpperCase()),
+        onPressed: () {
+          if (!isEnabled) {
+            return;
+          }
+
+          onTap();
+        },
+        child: Text(
+          title.toUpperCase(),
+          style: buttonTitle,
+        ),
       ),
     );
   }
