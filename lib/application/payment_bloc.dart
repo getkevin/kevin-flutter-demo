@@ -193,7 +193,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
               );
             },
             (paymentState) {
-              _kevinRepository.startCardPayment(paymentState.id);
+              _kevinRepository.startBankPayment(paymentState.id);
               return _resetState();
             },
           );
