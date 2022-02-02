@@ -29,7 +29,6 @@ class PaymentTypeSelector extends StatelessWidget {
           unselectedLabelColor: const Color(0xff818c99),
           tabs:
               options.map((option) => Tab(text: option.getTabName())).toList(),
-          indicatorSize: TabBarIndicatorSize.label,
           indicator: const KevinDemoTabIndicator(
             indicatorHeight: 2.0,
             indicatorColor: Color(0xff5d80fe),

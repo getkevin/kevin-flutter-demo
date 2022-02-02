@@ -16,6 +16,7 @@ import 'package:kevin_demo_app/application/payment_bloc.dart';
 import 'package:kevin_demo_app/presentation/home/widgets/creditor_selector.dart';
 import 'package:kevin_demo_app/presentation/home/widgets/payment_type_selector.dart';
 import 'package:styled_text/styled_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -68,6 +69,9 @@ class _HomeScreenState extends State<HomeScreen>
 
     showModalBottomSheet(
       context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
       builder: (BuildContext context) {
         return KevinDemoBottomSheetSelection(
           items: items,
@@ -144,6 +148,12 @@ class _HomeScreenState extends State<HomeScreen>
         ],
       ),
     );
+  }
+
+  Future<void> _launchUrl({
+    required String url,
+  }) async {
+    await canLaunch(url) ? await launch(url) : throw 'Could not launch $url';
   }
 
   @override
@@ -309,13 +319,28 @@ class _HomeScreenState extends State<HomeScreen>
                           Flexible(
                             child: StyledText(
                               text:
-                                  "I have read and agree with <link>Terms & Conditions</link> and <link>Privacy Policy</link>",
+                                  "I have read and agree with <linkTerms>Terms & Conditions</linkTerms> and <linkPrivacy>Privacy Policy</linkPrivacy>",
                               softWrap: true,
                               style: checkboxText,
                               tags: {
-                                'link': StyledTextTag(
-                                  style: const TextStyle(
-                                    color: Color(0xff5d80fe),
+                                'linkTerms': StyledTextActionTag(
+                                  (String? text, Map<String?, String?> attrs) =>
+                                      _launchUrl(
+                                    url:
+                                        "https://www.kevin.eu/docs/EN/terms-and-conditions/",
+                                  ),
+                                  style: checkboxText.copyWith(
+                                    color: const Color(0xff5d80fe),
+                                  ),
+                                ),
+                                'linkPrivacy': StyledTextActionTag(
+                                  (String? text, Map<String?, String?> attrs) =>
+                                      _launchUrl(
+                                    url:
+                                        "https://www.kevin.eu/docs/EN/privacy-policy/",
+                                  ),
+                                  style: checkboxText.copyWith(
+                                    color: const Color(0xff5d80fe),
                                   ),
                                 ),
                               },
@@ -331,6 +356,10 @@ class _HomeScreenState extends State<HomeScreen>
                         title:
                             "Donate • ${state.amount.toStringAsFixed(2)} EUR",
                         onTap: _onDonateButtonTapped,
+                        padding: 0.0,
+                      ),
+                      const SizedBox(
+                        height: 20.0,
                       ),
                     ],
                   ),

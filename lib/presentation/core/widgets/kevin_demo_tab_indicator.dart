@@ -30,7 +30,7 @@ class _RTIPainter extends BoxPainter {
 
     final Rect rect = Offset(
           offset.dx + decoration.indicatorPadding,
-          (configuration.size!.height - decoration.indicatorHeight) - 10,
+          (configuration.size!.height - decoration.indicatorHeight) - 8,
         ) &
         Size(
           configuration.size!.width - decoration.indicatorPadding * 2,
