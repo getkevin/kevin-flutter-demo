@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="eu.kevin.kevin_demo_app">
    <application
-        android:label="kevin.Demo"
+        android:label="kevin.Flutter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round">
