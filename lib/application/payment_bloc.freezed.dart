@@ -61,6 +61,10 @@ class _$PaymentEventTearOff {
   InitiateDonation initiateDonation() {
     return const InitiateDonation();
   }
+
+  SuccessPresented successPresented() {
+    return const SuccessPresented();
+  }
 }
 
 /// @nodoc
@@ -78,6 +82,7 @@ mixin _$PaymentEvent {
     required TResult Function(double amount) amountUpdated,
     required TResult Function(bool isAccepted) privacyAgreementUpdated,
     required TResult Function() initiateDonation,
+    required TResult Function() successPresented,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,6 +95,7 @@ mixin _$PaymentEvent {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,6 +108,7 @@ mixin _$PaymentEvent {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,6 +123,7 @@ mixin _$PaymentEvent {
     required TResult Function(PrivacyAgreementUpdated value)
         privacyAgreementUpdated,
     required TResult Function(InitiateDonation value) initiateDonation,
+    required TResult Function(SuccessPresented value) successPresented,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -128,6 +136,7 @@ mixin _$PaymentEvent {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -140,6 +149,7 @@ mixin _$PaymentEvent {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -210,6 +220,7 @@ class _$PaymentLoadInitiated implements PaymentLoadInitiated {
     required TResult Function(double amount) amountUpdated,
     required TResult Function(bool isAccepted) privacyAgreementUpdated,
     required TResult Function() initiateDonation,
+    required TResult Function() successPresented,
   }) {
     return loadInitiated();
   }
@@ -225,6 +236,7 @@ class _$PaymentLoadInitiated implements PaymentLoadInitiated {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
   }) {
     return loadInitiated?.call();
   }
@@ -240,6 +252,7 @@ class _$PaymentLoadInitiated implements PaymentLoadInitiated {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
     required TResult orElse(),
   }) {
     if (loadInitiated != null) {
@@ -260,6 +273,7 @@ class _$PaymentLoadInitiated implements PaymentLoadInitiated {
     required TResult Function(PrivacyAgreementUpdated value)
         privacyAgreementUpdated,
     required TResult Function(InitiateDonation value) initiateDonation,
+    required TResult Function(SuccessPresented value) successPresented,
   }) {
     return loadInitiated(this);
   }
@@ -275,6 +289,7 @@ class _$PaymentLoadInitiated implements PaymentLoadInitiated {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
   }) {
     return loadInitiated?.call(this);
   }
@@ -290,6 +305,7 @@ class _$PaymentLoadInitiated implements PaymentLoadInitiated {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
     required TResult orElse(),
   }) {
     if (loadInitiated != null) {
@@ -377,6 +393,7 @@ class _$PaymentTypeSelected implements PaymentTypeSelected {
     required TResult Function(double amount) amountUpdated,
     required TResult Function(bool isAccepted) privacyAgreementUpdated,
     required TResult Function() initiateDonation,
+    required TResult Function() successPresented,
   }) {
     return paymentTypeSelected(paymentType);
   }
@@ -392,6 +409,7 @@ class _$PaymentTypeSelected implements PaymentTypeSelected {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
   }) {
     return paymentTypeSelected?.call(paymentType);
   }
@@ -407,6 +425,7 @@ class _$PaymentTypeSelected implements PaymentTypeSelected {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
     required TResult orElse(),
   }) {
     if (paymentTypeSelected != null) {
@@ -427,6 +446,7 @@ class _$PaymentTypeSelected implements PaymentTypeSelected {
     required TResult Function(PrivacyAgreementUpdated value)
         privacyAgreementUpdated,
     required TResult Function(InitiateDonation value) initiateDonation,
+    required TResult Function(SuccessPresented value) successPresented,
   }) {
     return paymentTypeSelected(this);
   }
@@ -442,6 +462,7 @@ class _$PaymentTypeSelected implements PaymentTypeSelected {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
   }) {
     return paymentTypeSelected?.call(this);
   }
@@ -457,6 +478,7 @@ class _$PaymentTypeSelected implements PaymentTypeSelected {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
     required TResult orElse(),
   }) {
     if (paymentTypeSelected != null) {
@@ -551,6 +573,7 @@ class _$PaymentCountrySelected implements PaymentCountrySelected {
     required TResult Function(double amount) amountUpdated,
     required TResult Function(bool isAccepted) privacyAgreementUpdated,
     required TResult Function() initiateDonation,
+    required TResult Function() successPresented,
   }) {
     return countrySelected(countryCode);
   }
@@ -566,6 +589,7 @@ class _$PaymentCountrySelected implements PaymentCountrySelected {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
   }) {
     return countrySelected?.call(countryCode);
   }
@@ -581,6 +605,7 @@ class _$PaymentCountrySelected implements PaymentCountrySelected {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
     required TResult orElse(),
   }) {
     if (countrySelected != null) {
@@ -601,6 +626,7 @@ class _$PaymentCountrySelected implements PaymentCountrySelected {
     required TResult Function(PrivacyAgreementUpdated value)
         privacyAgreementUpdated,
     required TResult Function(InitiateDonation value) initiateDonation,
+    required TResult Function(SuccessPresented value) successPresented,
   }) {
     return countrySelected(this);
   }
@@ -616,6 +642,7 @@ class _$PaymentCountrySelected implements PaymentCountrySelected {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
   }) {
     return countrySelected?.call(this);
   }
@@ -631,6 +658,7 @@ class _$PaymentCountrySelected implements PaymentCountrySelected {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
     required TResult orElse(),
   }) {
     if (countrySelected != null) {
@@ -733,6 +761,7 @@ class _$PaymentCreditorSelected implements PaymentCreditorSelected {
     required TResult Function(double amount) amountUpdated,
     required TResult Function(bool isAccepted) privacyAgreementUpdated,
     required TResult Function() initiateDonation,
+    required TResult Function() successPresented,
   }) {
     return creditorSelected(creditor);
   }
@@ -748,6 +777,7 @@ class _$PaymentCreditorSelected implements PaymentCreditorSelected {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
   }) {
     return creditorSelected?.call(creditor);
   }
@@ -763,6 +793,7 @@ class _$PaymentCreditorSelected implements PaymentCreditorSelected {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
     required TResult orElse(),
   }) {
     if (creditorSelected != null) {
@@ -783,6 +814,7 @@ class _$PaymentCreditorSelected implements PaymentCreditorSelected {
     required TResult Function(PrivacyAgreementUpdated value)
         privacyAgreementUpdated,
     required TResult Function(InitiateDonation value) initiateDonation,
+    required TResult Function(SuccessPresented value) successPresented,
   }) {
     return creditorSelected(this);
   }
@@ -798,6 +830,7 @@ class _$PaymentCreditorSelected implements PaymentCreditorSelected {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
   }) {
     return creditorSelected?.call(this);
   }
@@ -813,6 +846,7 @@ class _$PaymentCreditorSelected implements PaymentCreditorSelected {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
     required TResult orElse(),
   }) {
     if (creditorSelected != null) {
@@ -904,6 +938,7 @@ class _$EmailUpdated implements EmailUpdated {
     required TResult Function(double amount) amountUpdated,
     required TResult Function(bool isAccepted) privacyAgreementUpdated,
     required TResult Function() initiateDonation,
+    required TResult Function() successPresented,
   }) {
     return emailUpdated(email);
   }
@@ -919,6 +954,7 @@ class _$EmailUpdated implements EmailUpdated {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
   }) {
     return emailUpdated?.call(email);
   }
@@ -934,6 +970,7 @@ class _$EmailUpdated implements EmailUpdated {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
     required TResult orElse(),
   }) {
     if (emailUpdated != null) {
@@ -954,6 +991,7 @@ class _$EmailUpdated implements EmailUpdated {
     required TResult Function(PrivacyAgreementUpdated value)
         privacyAgreementUpdated,
     required TResult Function(InitiateDonation value) initiateDonation,
+    required TResult Function(SuccessPresented value) successPresented,
   }) {
     return emailUpdated(this);
   }
@@ -969,6 +1007,7 @@ class _$EmailUpdated implements EmailUpdated {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
   }) {
     return emailUpdated?.call(this);
   }
@@ -984,6 +1023,7 @@ class _$EmailUpdated implements EmailUpdated {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
     required TResult orElse(),
   }) {
     if (emailUpdated != null) {
@@ -1074,6 +1114,7 @@ class _$AmountUpdated implements AmountUpdated {
     required TResult Function(double amount) amountUpdated,
     required TResult Function(bool isAccepted) privacyAgreementUpdated,
     required TResult Function() initiateDonation,
+    required TResult Function() successPresented,
   }) {
     return amountUpdated(amount);
   }
@@ -1089,6 +1130,7 @@ class _$AmountUpdated implements AmountUpdated {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
   }) {
     return amountUpdated?.call(amount);
   }
@@ -1104,6 +1146,7 @@ class _$AmountUpdated implements AmountUpdated {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
     required TResult orElse(),
   }) {
     if (amountUpdated != null) {
@@ -1124,6 +1167,7 @@ class _$AmountUpdated implements AmountUpdated {
     required TResult Function(PrivacyAgreementUpdated value)
         privacyAgreementUpdated,
     required TResult Function(InitiateDonation value) initiateDonation,
+    required TResult Function(SuccessPresented value) successPresented,
   }) {
     return amountUpdated(this);
   }
@@ -1139,6 +1183,7 @@ class _$AmountUpdated implements AmountUpdated {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
   }) {
     return amountUpdated?.call(this);
   }
@@ -1154,6 +1199,7 @@ class _$AmountUpdated implements AmountUpdated {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
     required TResult orElse(),
   }) {
     if (amountUpdated != null) {
@@ -1247,6 +1293,7 @@ class _$PrivacyAgreementUpdated implements PrivacyAgreementUpdated {
     required TResult Function(double amount) amountUpdated,
     required TResult Function(bool isAccepted) privacyAgreementUpdated,
     required TResult Function() initiateDonation,
+    required TResult Function() successPresented,
   }) {
     return privacyAgreementUpdated(isAccepted);
   }
@@ -1262,6 +1309,7 @@ class _$PrivacyAgreementUpdated implements PrivacyAgreementUpdated {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
   }) {
     return privacyAgreementUpdated?.call(isAccepted);
   }
@@ -1277,6 +1325,7 @@ class _$PrivacyAgreementUpdated implements PrivacyAgreementUpdated {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
     required TResult orElse(),
   }) {
     if (privacyAgreementUpdated != null) {
@@ -1297,6 +1346,7 @@ class _$PrivacyAgreementUpdated implements PrivacyAgreementUpdated {
     required TResult Function(PrivacyAgreementUpdated value)
         privacyAgreementUpdated,
     required TResult Function(InitiateDonation value) initiateDonation,
+    required TResult Function(SuccessPresented value) successPresented,
   }) {
     return privacyAgreementUpdated(this);
   }
@@ -1312,6 +1362,7 @@ class _$PrivacyAgreementUpdated implements PrivacyAgreementUpdated {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
   }) {
     return privacyAgreementUpdated?.call(this);
   }
@@ -1327,6 +1378,7 @@ class _$PrivacyAgreementUpdated implements PrivacyAgreementUpdated {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
     required TResult orElse(),
   }) {
     if (privacyAgreementUpdated != null) {
@@ -1395,6 +1447,7 @@ class _$InitiateDonation implements InitiateDonation {
     required TResult Function(double amount) amountUpdated,
     required TResult Function(bool isAccepted) privacyAgreementUpdated,
     required TResult Function() initiateDonation,
+    required TResult Function() successPresented,
   }) {
     return initiateDonation();
   }
@@ -1410,6 +1463,7 @@ class _$InitiateDonation implements InitiateDonation {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
   }) {
     return initiateDonation?.call();
   }
@@ -1425,6 +1479,7 @@ class _$InitiateDonation implements InitiateDonation {
     TResult Function(double amount)? amountUpdated,
     TResult Function(bool isAccepted)? privacyAgreementUpdated,
     TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
     required TResult orElse(),
   }) {
     if (initiateDonation != null) {
@@ -1445,6 +1500,7 @@ class _$InitiateDonation implements InitiateDonation {
     required TResult Function(PrivacyAgreementUpdated value)
         privacyAgreementUpdated,
     required TResult Function(InitiateDonation value) initiateDonation,
+    required TResult Function(SuccessPresented value) successPresented,
   }) {
     return initiateDonation(this);
   }
@@ -1460,6 +1516,7 @@ class _$InitiateDonation implements InitiateDonation {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
   }) {
     return initiateDonation?.call(this);
   }
@@ -1475,6 +1532,7 @@ class _$InitiateDonation implements InitiateDonation {
     TResult Function(AmountUpdated value)? amountUpdated,
     TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
     TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
     required TResult orElse(),
   }) {
     if (initiateDonation != null) {
@@ -1486,6 +1544,154 @@ class _$InitiateDonation implements InitiateDonation {
 
 abstract class InitiateDonation implements PaymentEvent {
   const factory InitiateDonation() = _$InitiateDonation;
+}
+
+/// @nodoc
+abstract class $SuccessPresentedCopyWith<$Res> {
+  factory $SuccessPresentedCopyWith(
+          SuccessPresented value, $Res Function(SuccessPresented) then) =
+      _$SuccessPresentedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SuccessPresentedCopyWithImpl<$Res>
+    extends _$PaymentEventCopyWithImpl<$Res>
+    implements $SuccessPresentedCopyWith<$Res> {
+  _$SuccessPresentedCopyWithImpl(
+      SuccessPresented _value, $Res Function(SuccessPresented) _then)
+      : super(_value, (v) => _then(v as SuccessPresented));
+
+  @override
+  SuccessPresented get _value => super._value as SuccessPresented;
+}
+
+/// @nodoc
+
+class _$SuccessPresented implements SuccessPresented {
+  const _$SuccessPresented();
+
+  @override
+  String toString() {
+    return 'PaymentEvent.successPresented()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SuccessPresented);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadInitiated,
+    required TResult Function(PaymentType paymentType) paymentTypeSelected,
+    required TResult Function(String countryCode) countrySelected,
+    required TResult Function(Creditor creditor) creditorSelected,
+    required TResult Function(String email) emailUpdated,
+    required TResult Function(double amount) amountUpdated,
+    required TResult Function(bool isAccepted) privacyAgreementUpdated,
+    required TResult Function() initiateDonation,
+    required TResult Function() successPresented,
+  }) {
+    return successPresented();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadInitiated,
+    TResult Function(PaymentType paymentType)? paymentTypeSelected,
+    TResult Function(String countryCode)? countrySelected,
+    TResult Function(Creditor creditor)? creditorSelected,
+    TResult Function(String email)? emailUpdated,
+    TResult Function(double amount)? amountUpdated,
+    TResult Function(bool isAccepted)? privacyAgreementUpdated,
+    TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
+  }) {
+    return successPresented?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadInitiated,
+    TResult Function(PaymentType paymentType)? paymentTypeSelected,
+    TResult Function(String countryCode)? countrySelected,
+    TResult Function(Creditor creditor)? creditorSelected,
+    TResult Function(String email)? emailUpdated,
+    TResult Function(double amount)? amountUpdated,
+    TResult Function(bool isAccepted)? privacyAgreementUpdated,
+    TResult Function()? initiateDonation,
+    TResult Function()? successPresented,
+    required TResult orElse(),
+  }) {
+    if (successPresented != null) {
+      return successPresented();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PaymentLoadInitiated value) loadInitiated,
+    required TResult Function(PaymentTypeSelected value) paymentTypeSelected,
+    required TResult Function(PaymentCountrySelected value) countrySelected,
+    required TResult Function(PaymentCreditorSelected value) creditorSelected,
+    required TResult Function(EmailUpdated value) emailUpdated,
+    required TResult Function(AmountUpdated value) amountUpdated,
+    required TResult Function(PrivacyAgreementUpdated value)
+        privacyAgreementUpdated,
+    required TResult Function(InitiateDonation value) initiateDonation,
+    required TResult Function(SuccessPresented value) successPresented,
+  }) {
+    return successPresented(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PaymentLoadInitiated value)? loadInitiated,
+    TResult Function(PaymentTypeSelected value)? paymentTypeSelected,
+    TResult Function(PaymentCountrySelected value)? countrySelected,
+    TResult Function(PaymentCreditorSelected value)? creditorSelected,
+    TResult Function(EmailUpdated value)? emailUpdated,
+    TResult Function(AmountUpdated value)? amountUpdated,
+    TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
+    TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
+  }) {
+    return successPresented?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PaymentLoadInitiated value)? loadInitiated,
+    TResult Function(PaymentTypeSelected value)? paymentTypeSelected,
+    TResult Function(PaymentCountrySelected value)? countrySelected,
+    TResult Function(PaymentCreditorSelected value)? creditorSelected,
+    TResult Function(EmailUpdated value)? emailUpdated,
+    TResult Function(AmountUpdated value)? amountUpdated,
+    TResult Function(PrivacyAgreementUpdated value)? privacyAgreementUpdated,
+    TResult Function(InitiateDonation value)? initiateDonation,
+    TResult Function(SuccessPresented value)? successPresented,
+    required TResult orElse(),
+  }) {
+    if (successPresented != null) {
+      return successPresented(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessPresented implements PaymentEvent {
+  const factory SuccessPresented() = _$SuccessPresented;
 }
 
 /// @nodoc
@@ -1509,6 +1715,7 @@ class _$PaymentStateTearOff {
       bool isCharityRequestInProgress = false,
       bool isPaymentRequestInProgress = false,
       bool showError = false,
+      bool sdkSuccess = false,
       String? errorMessage}) {
     return _PaymentState(
       emailController: emailController,
@@ -1527,6 +1734,7 @@ class _$PaymentStateTearOff {
       isCharityRequestInProgress: isCharityRequestInProgress,
       isPaymentRequestInProgress: isPaymentRequestInProgress,
       showError: showError,
+      sdkSuccess: sdkSuccess,
       errorMessage: errorMessage,
     );
   }
@@ -1555,6 +1763,7 @@ mixin _$PaymentState {
   bool get isCharityRequestInProgress => throw _privateConstructorUsedError;
   bool get isPaymentRequestInProgress => throw _privateConstructorUsedError;
   bool get showError => throw _privateConstructorUsedError;
+  bool get sdkSuccess => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1584,6 +1793,7 @@ abstract class $PaymentStateCopyWith<$Res> {
       bool isCharityRequestInProgress,
       bool isPaymentRequestInProgress,
       bool showError,
+      bool sdkSuccess,
       String? errorMessage});
 
   $CreditorCopyWith<$Res>? get selectedCreditor;
@@ -1615,6 +1825,7 @@ class _$PaymentStateCopyWithImpl<$Res> implements $PaymentStateCopyWith<$Res> {
     Object? isCharityRequestInProgress = freezed,
     Object? isPaymentRequestInProgress = freezed,
     Object? showError = freezed,
+    Object? sdkSuccess = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1682,6 +1893,10 @@ class _$PaymentStateCopyWithImpl<$Res> implements $PaymentStateCopyWith<$Res> {
           ? _value.showError
           : showError // ignore: cast_nullable_to_non_nullable
               as bool,
+      sdkSuccess: sdkSuccess == freezed
+          ? _value.sdkSuccess
+          : sdkSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1725,6 +1940,7 @@ abstract class _$PaymentStateCopyWith<$Res>
       bool isCharityRequestInProgress,
       bool isPaymentRequestInProgress,
       bool showError,
+      bool sdkSuccess,
       String? errorMessage});
 
   @override
@@ -1759,6 +1975,7 @@ class __$PaymentStateCopyWithImpl<$Res> extends _$PaymentStateCopyWithImpl<$Res>
     Object? isCharityRequestInProgress = freezed,
     Object? isPaymentRequestInProgress = freezed,
     Object? showError = freezed,
+    Object? sdkSuccess = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_PaymentState(
@@ -1826,6 +2043,10 @@ class __$PaymentStateCopyWithImpl<$Res> extends _$PaymentStateCopyWithImpl<$Res>
           ? _value.showError
           : showError // ignore: cast_nullable_to_non_nullable
               as bool,
+      sdkSuccess: sdkSuccess == freezed
+          ? _value.sdkSuccess
+          : sdkSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -1854,6 +2075,7 @@ class _$_PaymentState implements _PaymentState {
       this.isCharityRequestInProgress = false,
       this.isPaymentRequestInProgress = false,
       this.showError = false,
+      this.sdkSuccess = false,
       this.errorMessage});
 
   @override
@@ -1898,12 +2120,15 @@ class _$_PaymentState implements _PaymentState {
   @JsonKey()
   @override
   final bool showError;
+  @JsonKey()
+  @override
+  final bool sdkSuccess;
   @override
   final String? errorMessage;
 
   @override
   String toString() {
-    return 'PaymentState(emailController: $emailController, amountController: $amountController, emailFocusNode: $emailFocusNode, amountFocusNode: $amountFocusNode, selectedPaymentType: $selectedPaymentType, countryList: $countryList, selectedCountryCode: $selectedCountryCode, creditors: $creditors, selectedCreditor: $selectedCreditor, email: $email, amount: $amount, isPrivacyPolicyAccepted: $isPrivacyPolicyAccepted, isCountryRequestInProgress: $isCountryRequestInProgress, isCharityRequestInProgress: $isCharityRequestInProgress, isPaymentRequestInProgress: $isPaymentRequestInProgress, showError: $showError, errorMessage: $errorMessage)';
+    return 'PaymentState(emailController: $emailController, amountController: $amountController, emailFocusNode: $emailFocusNode, amountFocusNode: $amountFocusNode, selectedPaymentType: $selectedPaymentType, countryList: $countryList, selectedCountryCode: $selectedCountryCode, creditors: $creditors, selectedCreditor: $selectedCreditor, email: $email, amount: $amount, isPrivacyPolicyAccepted: $isPrivacyPolicyAccepted, isCountryRequestInProgress: $isCountryRequestInProgress, isCharityRequestInProgress: $isCharityRequestInProgress, isPaymentRequestInProgress: $isPaymentRequestInProgress, showError: $showError, sdkSuccess: $sdkSuccess, errorMessage: $errorMessage)';
   }
 
   @override
@@ -1940,6 +2165,8 @@ class _$_PaymentState implements _PaymentState {
                 other.isPaymentRequestInProgress, isPaymentRequestInProgress) &&
             const DeepCollectionEquality().equals(other.showError, showError) &&
             const DeepCollectionEquality()
+                .equals(other.sdkSuccess, sdkSuccess) &&
+            const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
   }
 
@@ -1962,6 +2189,7 @@ class _$_PaymentState implements _PaymentState {
       const DeepCollectionEquality().hash(isCharityRequestInProgress),
       const DeepCollectionEquality().hash(isPaymentRequestInProgress),
       const DeepCollectionEquality().hash(showError),
+      const DeepCollectionEquality().hash(sdkSuccess),
       const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
@@ -1988,6 +2216,7 @@ abstract class _PaymentState implements PaymentState {
       bool isCharityRequestInProgress,
       bool isPaymentRequestInProgress,
       bool showError,
+      bool sdkSuccess,
       String? errorMessage}) = _$_PaymentState;
 
   @override
@@ -2022,6 +2251,8 @@ abstract class _PaymentState implements PaymentState {
   bool get isPaymentRequestInProgress;
   @override
   bool get showError;
+  @override
+  bool get sdkSuccess;
   @override
   String? get errorMessage;
   @override

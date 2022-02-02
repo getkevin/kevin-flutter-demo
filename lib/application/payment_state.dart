@@ -19,6 +19,7 @@ class PaymentState with _$PaymentState {
     @Default(false) bool isCharityRequestInProgress,
     @Default(false) bool isPaymentRequestInProgress,
     @Default(false) bool showError,
+    @Default(false) bool sdkSuccess,
     String? errorMessage,
   }) = _PaymentState;
 

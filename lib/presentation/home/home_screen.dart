@@ -170,7 +170,8 @@ class _HomeScreenState extends State<HomeScreen>
         backgroundColor: const Color(0xfff2f2f7),
         body: BlocConsumer<PaymentBloc, PaymentState>(
           listenWhen: (previousState, currentState) {
-            return previousState.showError != currentState.showError;
+            return previousState.showError != currentState.showError ||
+                previousState.sdkSuccess != currentState.sdkSuccess;
           },
           listener: (context, state) {
             if (state.showError && state.errorMessage != null) {
@@ -179,6 +180,16 @@ class _HomeScreenState extends State<HomeScreen>
                 isSuccess: false,
                 context: context,
               );
+            } else if (state.sdkSuccess) {
+              _presentAlert(
+                message: "Donation was successful",
+                isSuccess: true,
+                context: context,
+              );
+
+              context.read<PaymentBloc>().add(
+                    const PaymentEvent.successPresented(),
+                  );
             }
           },
           builder: (context, state) {

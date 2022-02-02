@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'payment_state_dto.dart';
+part of 'payment_initialization_state_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PaymentStateDTO _$$_PaymentStateDTOFromJson(Map<String, dynamic> json) =>
-    _$_PaymentStateDTO(
+_$_PaymentInitializationStateDTO _$$_PaymentInitializationStateDTOFromJson(
+        Map<String, dynamic> json) =>
+    _$_PaymentInitializationStateDTO(
       id: json['id'] as String,
       bankStatus: json['bankStatus'] as String?,
       cardStatus: json['cardStatus'] as String?,
@@ -15,7 +16,8 @@ _$_PaymentStateDTO _$$_PaymentStateDTOFromJson(Map<String, dynamic> json) =>
       confirmLink: json['confirmLink'] as String,
     );
 
-Map<String, dynamic> _$$_PaymentStateDTOToJson(_$_PaymentStateDTO instance) =>
+Map<String, dynamic> _$$_PaymentInitializationStateDTOToJson(
+        _$_PaymentInitializationStateDTO instance) =>
     <String, dynamic>{
       'id': instance.id,
       'bankStatus': instance.bankStatus,

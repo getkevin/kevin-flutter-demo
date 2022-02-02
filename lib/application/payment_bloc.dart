@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -7,7 +8,9 @@ import 'package:injectable/injectable.dart';
 import 'package:kevin_demo_app/domain/creditor/creditor.dart';
 import 'package:kevin_demo_app/domain/i_api_repository.dart';
 import 'package:kevin_demo_app/domain/i_kevin_repository.dart';
+import 'package:kevin_demo_app/domain/payment_initialization_state/payment_initialization_state.dart';
 import 'package:kevin_demo_app/domain/payment_type.dart';
+import 'package:kevin_demo_app/domain/repository_failure/repository_failure.dart';
 
 part 'payment_bloc.freezed.dart';
 part 'payment_event.dart';
@@ -177,65 +180,78 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
         );
       },
       initiateDonation: (_) async* {
+        state.emailFocusNode.unfocus();
+        state.amountFocusNode.unfocus();
+
+        late Either<RepositoryFailure, PaymentInitializationState>
+            initializationResult;
         if (state.selectedPaymentType == PaymentType.bank) {
-          final initializationResult =
-              await _apiRepository.initializeBankPayment(
+          initializationResult = await _apiRepository.initializeBankPayment(
             amount: state.amount.toStringAsFixed(2),
             email: state.email,
             iban: state.selectedCreditor!.iban,
-          );
-
-          yield initializationResult.fold(
-            (error) {
-              return state.copyWith(
-                showError: true,
-                errorMessage: error.getErrorMessage(),
-              );
-            },
-            (paymentState) {
-              _kevinRepository.startBankPayment(paymentState.id);
-              return _resetState();
-            },
+            creditorName: state.selectedCreditor!.name,
           );
         } else {
-          final initializationResult =
-              await _apiRepository.initializeCardPayment(
+          initializationResult = await _apiRepository.initializeCardPayment(
             amount: state.amount.toStringAsFixed(2),
             email: state.email,
             iban: state.selectedCreditor!.iban,
-          );
-
-          yield initializationResult.fold(
-            (error) {
-              return state.copyWith(
-                showError: true,
-                errorMessage: error.getErrorMessage(),
-              );
-            },
-            (paymentState) {
-              _kevinRepository.startCardPayment(paymentState.id);
-              return _resetState();
-            },
+            creditorName: state.selectedCreditor!.name,
           );
         }
+
+        yield await initializationResult.fold(
+          (error) {
+            return state.copyWith(
+              showError: true,
+              errorMessage: error.getErrorMessage(),
+            );
+          },
+          (paymentState) async {
+            late Either<RepositoryFailure, String> sdkCallResult;
+
+            if (state.selectedPaymentType == PaymentType.bank) {
+              sdkCallResult = await _kevinRepository.startBankPayment(
+                paymentState.id,
+              );
+            } else {
+              sdkCallResult = await _kevinRepository.startCardPayment(
+                paymentState.id,
+              );
+            }
+
+            return sdkCallResult.fold(
+              (error) {
+                return state.copyWith(
+                  showError: true,
+                  errorMessage: error.getErrorMessage(),
+                );
+              },
+              (r) {
+                state.emailController.text = "";
+                state.amountController.text = "";
+
+                return state.copyWith(
+                  selectedCountryCode: "LT",
+                  selectedCreditor: null,
+                  email: "",
+                  amount: 0.0,
+                  isPrivacyPolicyAccepted: false,
+                  showError: false,
+                  errorMessage: null,
+                  sdkSuccess: true,
+                );
+              },
+            );
+          },
+        );
       },
-    );
-  }
-
-  PaymentState _resetState() {
-    state.emailController.text = "";
-    state.amountController.text = "";
-    state.emailFocusNode.unfocus();
-    state.amountFocusNode.unfocus();
-
-    return state.copyWith(
-      selectedCountryCode: "LT",
-      selectedCreditor: null,
-      email: "",
-      amount: 0.0,
-      isPrivacyPolicyAccepted: false,
-      showError: false,
-      errorMessage: null,
+      successPresented: (SuccessPresented value) async* {
+        yield state.copyWith(
+          sdkSuccess: false,
+        );
+      },
     );
   }
 }

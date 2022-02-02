@@ -22,4 +22,5 @@ class PaymentEvent with _$PaymentEvent {
     required bool isAccepted,
   }) = PrivacyAgreementUpdated;
   const factory PaymentEvent.initiateDonation() = InitiateDonation;
+  const factory PaymentEvent.successPresented() = SuccessPresented;
 }

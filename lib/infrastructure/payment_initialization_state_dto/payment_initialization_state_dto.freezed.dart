@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'payment_state_dto.dart';
+part of 'payment_initialization_state_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,21 +14,22 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-PaymentStateDTO _$PaymentStateDTOFromJson(Map<String, dynamic> json) {
-  return _PaymentStateDTO.fromJson(json);
+PaymentInitializationStateDTO _$PaymentInitializationStateDTOFromJson(
+    Map<String, dynamic> json) {
+  return _PaymentInitializationStateDTO.fromJson(json);
 }
 
 /// @nodoc
-class _$PaymentStateDTOTearOff {
-  const _$PaymentStateDTOTearOff();
+class _$PaymentInitializationStateDTOTearOff {
+  const _$PaymentInitializationStateDTOTearOff();
 
-  _PaymentStateDTO call(
+  _PaymentInitializationStateDTO call(
       {required String id,
       String? bankStatus,
       String? cardStatus,
       required String statusGroup,
       required String confirmLink}) {
-    return _PaymentStateDTO(
+    return _PaymentInitializationStateDTO(
       id: id,
       bankStatus: bankStatus,
       cardStatus: cardStatus,
@@ -37,16 +38,16 @@ class _$PaymentStateDTOTearOff {
     );
   }
 
-  PaymentStateDTO fromJson(Map<String, Object?> json) {
-    return PaymentStateDTO.fromJson(json);
+  PaymentInitializationStateDTO fromJson(Map<String, Object?> json) {
+    return PaymentInitializationStateDTO.fromJson(json);
   }
 }
 
 /// @nodoc
-const $PaymentStateDTO = _$PaymentStateDTOTearOff();
+const $PaymentInitializationStateDTO = _$PaymentInitializationStateDTOTearOff();
 
 /// @nodoc
-mixin _$PaymentStateDTO {
+mixin _$PaymentInitializationStateDTO {
   String get id => throw _privateConstructorUsedError;
   String? get bankStatus => throw _privateConstructorUsedError;
   String? get cardStatus => throw _privateConstructorUsedError;
@@ -55,15 +56,16 @@ mixin _$PaymentStateDTO {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PaymentStateDTOCopyWith<PaymentStateDTO> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PaymentInitializationStateDTOCopyWith<PaymentInitializationStateDTO>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PaymentStateDTOCopyWith<$Res> {
-  factory $PaymentStateDTOCopyWith(
-          PaymentStateDTO value, $Res Function(PaymentStateDTO) then) =
-      _$PaymentStateDTOCopyWithImpl<$Res>;
+abstract class $PaymentInitializationStateDTOCopyWith<$Res> {
+  factory $PaymentInitializationStateDTOCopyWith(
+          PaymentInitializationStateDTO value,
+          $Res Function(PaymentInitializationStateDTO) then) =
+      _$PaymentInitializationStateDTOCopyWithImpl<$Res>;
   $Res call(
       {String id,
       String? bankStatus,
@@ -73,13 +75,13 @@ abstract class $PaymentStateDTOCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PaymentStateDTOCopyWithImpl<$Res>
-    implements $PaymentStateDTOCopyWith<$Res> {
-  _$PaymentStateDTOCopyWithImpl(this._value, this._then);
+class _$PaymentInitializationStateDTOCopyWithImpl<$Res>
+    implements $PaymentInitializationStateDTOCopyWith<$Res> {
+  _$PaymentInitializationStateDTOCopyWithImpl(this._value, this._then);
 
-  final PaymentStateDTO _value;
+  final PaymentInitializationStateDTO _value;
   // ignore: unused_field
-  final $Res Function(PaymentStateDTO) _then;
+  final $Res Function(PaymentInitializationStateDTO) _then;
 
   @override
   $Res call({
@@ -115,11 +117,12 @@ class _$PaymentStateDTOCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PaymentStateDTOCopyWith<$Res>
-    implements $PaymentStateDTOCopyWith<$Res> {
-  factory _$PaymentStateDTOCopyWith(
-          _PaymentStateDTO value, $Res Function(_PaymentStateDTO) then) =
-      __$PaymentStateDTOCopyWithImpl<$Res>;
+abstract class _$PaymentInitializationStateDTOCopyWith<$Res>
+    implements $PaymentInitializationStateDTOCopyWith<$Res> {
+  factory _$PaymentInitializationStateDTOCopyWith(
+          _PaymentInitializationStateDTO value,
+          $Res Function(_PaymentInitializationStateDTO) then) =
+      __$PaymentInitializationStateDTOCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -130,15 +133,17 @@ abstract class _$PaymentStateDTOCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PaymentStateDTOCopyWithImpl<$Res>
-    extends _$PaymentStateDTOCopyWithImpl<$Res>
-    implements _$PaymentStateDTOCopyWith<$Res> {
-  __$PaymentStateDTOCopyWithImpl(
-      _PaymentStateDTO _value, $Res Function(_PaymentStateDTO) _then)
-      : super(_value, (v) => _then(v as _PaymentStateDTO));
+class __$PaymentInitializationStateDTOCopyWithImpl<$Res>
+    extends _$PaymentInitializationStateDTOCopyWithImpl<$Res>
+    implements _$PaymentInitializationStateDTOCopyWith<$Res> {
+  __$PaymentInitializationStateDTOCopyWithImpl(
+      _PaymentInitializationStateDTO _value,
+      $Res Function(_PaymentInitializationStateDTO) _then)
+      : super(_value, (v) => _then(v as _PaymentInitializationStateDTO));
 
   @override
-  _PaymentStateDTO get _value => super._value as _PaymentStateDTO;
+  _PaymentInitializationStateDTO get _value =>
+      super._value as _PaymentInitializationStateDTO;
 
   @override
   $Res call({
@@ -148,7 +153,7 @@ class __$PaymentStateDTOCopyWithImpl<$Res>
     Object? statusGroup = freezed,
     Object? confirmLink = freezed,
   }) {
-    return _then(_PaymentStateDTO(
+    return _then(_PaymentInitializationStateDTO(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -175,8 +180,8 @@ class __$PaymentStateDTOCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PaymentStateDTO extends _PaymentStateDTO {
-  const _$_PaymentStateDTO(
+class _$_PaymentInitializationStateDTO extends _PaymentInitializationStateDTO {
+  const _$_PaymentInitializationStateDTO(
       {required this.id,
       this.bankStatus,
       this.cardStatus,
@@ -184,8 +189,9 @@ class _$_PaymentStateDTO extends _PaymentStateDTO {
       required this.confirmLink})
       : super._();
 
-  factory _$_PaymentStateDTO.fromJson(Map<String, dynamic> json) =>
-      _$$_PaymentStateDTOFromJson(json);
+  factory _$_PaymentInitializationStateDTO.fromJson(
+          Map<String, dynamic> json) =>
+      _$$_PaymentInitializationStateDTOFromJson(json);
 
   @override
   final String id;
@@ -200,14 +206,14 @@ class _$_PaymentStateDTO extends _PaymentStateDTO {
 
   @override
   String toString() {
-    return 'PaymentStateDTO(id: $id, bankStatus: $bankStatus, cardStatus: $cardStatus, statusGroup: $statusGroup, confirmLink: $confirmLink)';
+    return 'PaymentInitializationStateDTO(id: $id, bankStatus: $bankStatus, cardStatus: $cardStatus, statusGroup: $statusGroup, confirmLink: $confirmLink)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PaymentStateDTO &&
+            other is _PaymentInitializationStateDTO &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality()
                 .equals(other.bankStatus, bankStatus) &&
@@ -230,26 +236,28 @@ class _$_PaymentStateDTO extends _PaymentStateDTO {
 
   @JsonKey(ignore: true)
   @override
-  _$PaymentStateDTOCopyWith<_PaymentStateDTO> get copyWith =>
-      __$PaymentStateDTOCopyWithImpl<_PaymentStateDTO>(this, _$identity);
+  _$PaymentInitializationStateDTOCopyWith<_PaymentInitializationStateDTO>
+      get copyWith => __$PaymentInitializationStateDTOCopyWithImpl<
+          _PaymentInitializationStateDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaymentStateDTOToJson(this);
+    return _$$_PaymentInitializationStateDTOToJson(this);
   }
 }
 
-abstract class _PaymentStateDTO extends PaymentStateDTO {
-  const factory _PaymentStateDTO(
+abstract class _PaymentInitializationStateDTO
+    extends PaymentInitializationStateDTO {
+  const factory _PaymentInitializationStateDTO(
       {required String id,
       String? bankStatus,
       String? cardStatus,
       required String statusGroup,
-      required String confirmLink}) = _$_PaymentStateDTO;
-  const _PaymentStateDTO._() : super._();
+      required String confirmLink}) = _$_PaymentInitializationStateDTO;
+  const _PaymentInitializationStateDTO._() : super._();
 
-  factory _PaymentStateDTO.fromJson(Map<String, dynamic> json) =
-      _$_PaymentStateDTO.fromJson;
+  factory _PaymentInitializationStateDTO.fromJson(Map<String, dynamic> json) =
+      _$_PaymentInitializationStateDTO.fromJson;
 
   @override
   String get id;
@@ -263,6 +271,6 @@ abstract class _PaymentStateDTO extends PaymentStateDTO {
   String get confirmLink;
   @override
   @JsonKey(ignore: true)
-  _$PaymentStateDTOCopyWith<_PaymentStateDTO> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$PaymentInitializationStateDTOCopyWith<_PaymentInitializationStateDTO>
+      get copyWith => throw _privateConstructorUsedError;
 }

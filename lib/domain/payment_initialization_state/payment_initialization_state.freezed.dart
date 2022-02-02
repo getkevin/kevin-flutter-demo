@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'payment_state.dart';
+part of 'payment_initialization_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,16 +15,16 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$PaymentStateTearOff {
-  const _$PaymentStateTearOff();
+class _$PaymentInitializationStateTearOff {
+  const _$PaymentInitializationStateTearOff();
 
-  _PaymentState call(
+  _PaymentInitializationState call(
       {required String id,
       String? bankStatus,
       String? cardStatus,
       required String statusGroup,
       required String confirmLink}) {
-    return _PaymentState(
+    return _PaymentInitializationState(
       id: id,
       bankStatus: bankStatus,
       cardStatus: cardStatus,
@@ -35,10 +35,10 @@ class _$PaymentStateTearOff {
 }
 
 /// @nodoc
-const $PaymentState = _$PaymentStateTearOff();
+const $PaymentInitializationState = _$PaymentInitializationStateTearOff();
 
 /// @nodoc
-mixin _$PaymentState {
+mixin _$PaymentInitializationState {
   String get id => throw _privateConstructorUsedError;
   String? get bankStatus => throw _privateConstructorUsedError;
   String? get cardStatus => throw _privateConstructorUsedError;
@@ -46,15 +46,15 @@ mixin _$PaymentState {
   String get confirmLink => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $PaymentStateCopyWith<PaymentState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PaymentInitializationStateCopyWith<PaymentInitializationState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PaymentStateCopyWith<$Res> {
-  factory $PaymentStateCopyWith(
-          PaymentState value, $Res Function(PaymentState) then) =
-      _$PaymentStateCopyWithImpl<$Res>;
+abstract class $PaymentInitializationStateCopyWith<$Res> {
+  factory $PaymentInitializationStateCopyWith(PaymentInitializationState value,
+          $Res Function(PaymentInitializationState) then) =
+      _$PaymentInitializationStateCopyWithImpl<$Res>;
   $Res call(
       {String id,
       String? bankStatus,
@@ -64,12 +64,13 @@ abstract class $PaymentStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PaymentStateCopyWithImpl<$Res> implements $PaymentStateCopyWith<$Res> {
-  _$PaymentStateCopyWithImpl(this._value, this._then);
+class _$PaymentInitializationStateCopyWithImpl<$Res>
+    implements $PaymentInitializationStateCopyWith<$Res> {
+  _$PaymentInitializationStateCopyWithImpl(this._value, this._then);
 
-  final PaymentState _value;
+  final PaymentInitializationState _value;
   // ignore: unused_field
-  final $Res Function(PaymentState) _then;
+  final $Res Function(PaymentInitializationState) _then;
 
   @override
   $Res call({
@@ -105,11 +106,12 @@ class _$PaymentStateCopyWithImpl<$Res> implements $PaymentStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PaymentStateCopyWith<$Res>
-    implements $PaymentStateCopyWith<$Res> {
-  factory _$PaymentStateCopyWith(
-          _PaymentState value, $Res Function(_PaymentState) then) =
-      __$PaymentStateCopyWithImpl<$Res>;
+abstract class _$PaymentInitializationStateCopyWith<$Res>
+    implements $PaymentInitializationStateCopyWith<$Res> {
+  factory _$PaymentInitializationStateCopyWith(
+          _PaymentInitializationState value,
+          $Res Function(_PaymentInitializationState) then) =
+      __$PaymentInitializationStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -120,14 +122,16 @@ abstract class _$PaymentStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PaymentStateCopyWithImpl<$Res> extends _$PaymentStateCopyWithImpl<$Res>
-    implements _$PaymentStateCopyWith<$Res> {
-  __$PaymentStateCopyWithImpl(
-      _PaymentState _value, $Res Function(_PaymentState) _then)
-      : super(_value, (v) => _then(v as _PaymentState));
+class __$PaymentInitializationStateCopyWithImpl<$Res>
+    extends _$PaymentInitializationStateCopyWithImpl<$Res>
+    implements _$PaymentInitializationStateCopyWith<$Res> {
+  __$PaymentInitializationStateCopyWithImpl(_PaymentInitializationState _value,
+      $Res Function(_PaymentInitializationState) _then)
+      : super(_value, (v) => _then(v as _PaymentInitializationState));
 
   @override
-  _PaymentState get _value => super._value as _PaymentState;
+  _PaymentInitializationState get _value =>
+      super._value as _PaymentInitializationState;
 
   @override
   $Res call({
@@ -137,7 +141,7 @@ class __$PaymentStateCopyWithImpl<$Res> extends _$PaymentStateCopyWithImpl<$Res>
     Object? statusGroup = freezed,
     Object? confirmLink = freezed,
   }) {
-    return _then(_PaymentState(
+    return _then(_PaymentInitializationState(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -164,8 +168,8 @@ class __$PaymentStateCopyWithImpl<$Res> extends _$PaymentStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PaymentState extends _PaymentState {
-  const _$_PaymentState(
+class _$_PaymentInitializationState extends _PaymentInitializationState {
+  const _$_PaymentInitializationState(
       {required this.id,
       this.bankStatus,
       this.cardStatus,
@@ -186,14 +190,14 @@ class _$_PaymentState extends _PaymentState {
 
   @override
   String toString() {
-    return 'PaymentState(id: $id, bankStatus: $bankStatus, cardStatus: $cardStatus, statusGroup: $statusGroup, confirmLink: $confirmLink)';
+    return 'PaymentInitializationState(id: $id, bankStatus: $bankStatus, cardStatus: $cardStatus, statusGroup: $statusGroup, confirmLink: $confirmLink)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PaymentState &&
+            other is _PaymentInitializationState &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality()
                 .equals(other.bankStatus, bankStatus) &&
@@ -216,18 +220,19 @@ class _$_PaymentState extends _PaymentState {
 
   @JsonKey(ignore: true)
   @override
-  _$PaymentStateCopyWith<_PaymentState> get copyWith =>
-      __$PaymentStateCopyWithImpl<_PaymentState>(this, _$identity);
+  _$PaymentInitializationStateCopyWith<_PaymentInitializationState>
+      get copyWith => __$PaymentInitializationStateCopyWithImpl<
+          _PaymentInitializationState>(this, _$identity);
 }
 
-abstract class _PaymentState extends PaymentState {
-  const factory _PaymentState(
+abstract class _PaymentInitializationState extends PaymentInitializationState {
+  const factory _PaymentInitializationState(
       {required String id,
       String? bankStatus,
       String? cardStatus,
       required String statusGroup,
-      required String confirmLink}) = _$_PaymentState;
-  const _PaymentState._() : super._();
+      required String confirmLink}) = _$_PaymentInitializationState;
+  const _PaymentInitializationState._() : super._();
 
   @override
   String get id;
@@ -241,6 +246,6 @@ abstract class _PaymentState extends PaymentState {
   String get confirmLink;
   @override
   @JsonKey(ignore: true)
-  _$PaymentStateCopyWith<_PaymentState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$PaymentInitializationStateCopyWith<_PaymentInitializationState>
+      get copyWith => throw _privateConstructorUsedError;
 }
