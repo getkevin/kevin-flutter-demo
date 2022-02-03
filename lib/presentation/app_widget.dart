@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kevin_demo_app/injectable.dart';
+import 'package:kevin_demo_app/application/payment_bloc.dart';
 
-import 'package:kevin_demo_app/presentation/home_screen.dart';
+import 'package:kevin_demo_app/presentation/home/home_screen.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -12,13 +15,17 @@ class AppWidget extends StatelessWidget {
       DeviceOrientation.portraitUp,
     ]);
 
-    return MaterialApp(
-      title: 'Kevin Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return BlocProvider(
+      create: (context) =>
+          getIt<PaymentBloc>()..add(const PaymentEvent.loadInitiated()),
+      child: MaterialApp(
+        title: 'Kevin Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const HomeScreen(),
       ),
-      home: const HomeScreen(),
     );
   }
 }

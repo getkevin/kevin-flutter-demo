@@ -1,39 +1,36 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:kevin_demo_app/domain/auth_state/auth_state.dart';
-import 'package:kevin_demo_app/domain/payment_state/payment_state.dart';
+import 'package:kevin_demo_app/domain/creditor/creditor.dart';
 import 'package:kevin_demo_app/domain/i_api_repository.dart';
+import 'package:kevin_demo_app/domain/payment_initialization_state/payment_initialization_state.dart';
 import 'package:kevin_demo_app/domain/repository_failure/repository_failure.dart';
-import 'package:kevin_demo_app/infrastructure/auth_state_dto/auth_state_dto.dart';
-import 'package:kevin_demo_app/infrastructure/payment_state_dto/payment_state_dto.dart';
+import 'package:kevin_demo_app/infrastructure/creditor_dto/creditor_dto.dart';
+import 'package:kevin_demo_app/infrastructure/payment_initialization_state_dto/payment_initialization_state_dto.dart';
 
 @LazySingleton(as: IApiRepository)
 class ApiRepository implements IApiRepository {
   final Dio _dio;
 
-  final String baseUrl = "https://your.kevin.url/";
+  final String kevinDemoBaseUrl = "https://api.getkevin.eu/demo";
+  final String kevinMobileDemoBaseUrl = "https://mobile-demo.kevin.eu/api/v2/";
 
   ApiRepository(
     this._dio,
   );
 
   @override
-  Future<Either<RepositoryFailure, AuthState>> getAuthState() async {
+  Future<Either<RepositoryFailure, List<String>>> getCountryList() async {
     try {
-      final Response<dynamic> response = await _dio.post(
-        "$baseUrl/auth/initiate/",
-        data: {
-          "scopes": ["payments"],
-        },
+      final Response<dynamic> response = await _dio.get(
+        "$kevinDemoBaseUrl/countries",
       );
 
       if (response.data != null) {
-        final authState =
-            AuthStateDTO.fromJson(response.data as Map<String, dynamic>)
-                .toDomain();
-
-        return right(authState);
+        final countryCodes = response.data["data"].map<String>((item) {
+          return item as String;
+        }).toList();
+        return right(countryCodes);
       } else {
         return left(const RepositoryFailure.emptyResponse());
       }
@@ -43,21 +40,57 @@ class ApiRepository implements IApiRepository {
   }
 
   @override
-  Future<Either<RepositoryFailure, PaymentState>> initializeBankPayment(
-    String amount,
-  ) async {
+  Future<Either<RepositoryFailure, List<Creditor>>> getCreditors({
+    required String forCountryCode,
+  }) async {
     try {
-      final Response<dynamic> response = await _dio.post(
-        "$baseUrl/payments/bank/",
-        data: {
-          "amount": amount,
+      final countryCode = forCountryCode.toUpperCase() == "LT" ? "LT" : "EE";
+      final Response<dynamic> response = await _dio.get(
+        "$kevinDemoBaseUrl/creditors",
+        queryParameters: {
+          "countryCode": countryCode,
         },
       );
 
       if (response.data != null) {
-        final paymentState =
-            PaymentStateDTO.fromJson(response.data as Map<String, dynamic>)
-                .toDomain();
+        final responseList = response.data["data"] as List<dynamic>;
+
+        final creditors = responseList.map((e) {
+          return CreditorDTO.fromJson(e).toDomain();
+        }).toList();
+
+        return right(creditors);
+      } else {
+        return left(const RepositoryFailure.emptyResponse());
+      }
+    } catch (e) {
+      return left(const RepositoryFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<RepositoryFailure, PaymentInitializationState>>
+      initializeBankPayment({
+    required String amount,
+    required String email,
+    required String iban,
+    required String creditorName,
+  }) async {
+    try {
+      final Response<dynamic> response = await _dio.post(
+        "$kevinMobileDemoBaseUrl/payments/bank/",
+        data: {
+          "amount": amount,
+          "email": email,
+          "iban": iban,
+          "creditorName": creditorName,
+        },
+      );
+
+      if (response.data != null) {
+        final paymentState = PaymentInitializationStateDTO.fromJson(
+                response.data as Map<String, dynamic>)
+            .toDomain();
 
         return right(paymentState);
       } else {
@@ -69,21 +102,28 @@ class ApiRepository implements IApiRepository {
   }
 
   @override
-  Future<Either<RepositoryFailure, PaymentState>> initializeCardPayment(
-    String amount,
-  ) async {
+  Future<Either<RepositoryFailure, PaymentInitializationState>>
+      initializeCardPayment({
+    required String amount,
+    required String email,
+    required String iban,
+    required String creditorName,
+  }) async {
     try {
       final Response<dynamic> response = await _dio.post(
-        "$baseUrl/payments/card/",
+        "$kevinMobileDemoBaseUrl/payments/card/",
         data: {
           "amount": amount,
+          "email": email,
+          "iban": iban,
+          "creditorName": creditorName,
         },
       );
 
       if (response.data != null) {
-        final paymentState =
-            PaymentStateDTO.fromJson(response.data as Map<String, dynamic>)
-                .toDomain();
+        final paymentState = PaymentInitializationStateDTO.fromJson(
+                response.data as Map<String, dynamic>)
+            .toDomain();
 
         return right(paymentState);
       } else {

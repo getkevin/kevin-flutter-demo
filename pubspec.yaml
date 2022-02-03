@@ -18,6 +18,9 @@ dependencies:
   json_annotation: ^4.4.0
   injectable: ^1.5.3
   get_it: ^7.2.0
+  flutter_bloc: ^7.0.0
+  styled_text: ^4.0.0+1
+  url_launcher: ^6.0.18
 
 dev_dependencies:
   flutter_test:
@@ -34,3 +37,16 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: "SFUIText"
+      fonts:
+        - asset: fonts/SFUIText-Light.ttf
+          weight: 300
+        - asset: fonts/SFUIText-Regular.ttf
+          weight: 400
+        - asset: fonts/SFUIText-Semibold.ttf
+          weight: 600
+        - asset: fonts/SFUIText-Bold.ttf
+          weight: 700
