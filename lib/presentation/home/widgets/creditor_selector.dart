@@ -24,7 +24,9 @@ class CreditorSelector extends StatelessWidget {
     if (isLoadingInProgress) {
       return const SizedBox(
         height: 51.0,
-        child: KevinDemoProgressIndicator(),
+        child: Center(
+          child: KevinDemoProgressIndicator(),
+        ),
       );
     }
 

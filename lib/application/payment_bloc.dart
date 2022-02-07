@@ -114,6 +114,8 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
                 isCharityRequestInProgress: false,
                 showError: false,
                 creditors: creditorsList,
+                selectedCreditor:
+                    creditorsList.isNotEmpty ? creditorsList.first : null,
               );
             },
           );
@@ -153,6 +155,8 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
               isCharityRequestInProgress: false,
               showError: false,
               creditors: creditorsList,
+              selectedCreditor:
+                  creditorsList.isNotEmpty ? creditorsList.first : null,
             );
           },
         );
